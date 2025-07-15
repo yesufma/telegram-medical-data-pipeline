@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw schema containing YOLO image detections"
+    schema: raw  # <-- matches your PostgreSQL schema name
+    tables:
+      - name: image_detections
+        description: "Detections from YOLOv8 saved to PostgreSQL"

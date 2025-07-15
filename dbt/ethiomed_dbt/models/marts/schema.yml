@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_messages
+    columns:
+      - name: message_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_image_detections
+    columns:
+      - name: message_id
+        tests:
+          - not_null
+      - name: confidence_score
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
